@@ -39,4 +39,38 @@ class LinkedList:
         return False
 
     def reverse_list(self, node, prev):
-        pass
+        if self.head == None:
+            return
+        elif node.next_node:
+            self.reverse_list(node.next_node, node)
+            node.next_node = prev
+            return
+        else:
+            self.head = node
+            node.next_node = prev
+            return
+
+    # print some values
+    def showValues(self):
+        current = self.head
+        while True:
+            print(current.value)
+            if current.next_node == None:
+                print("End of values")
+                break
+            if current == current.next_node:
+                print("This is a tail")
+                break
+            current = current.next_node
+
+# testing the values
+#         tail = None
+# list = LinkedList()
+# list.add_to_head(1)
+# list.add_to_head(2)
+# list.add_to_head(3)
+# list.add_to_head(4)
+# list.add_to_head(5)
+# list.showValues()
+# list.reverse_list(list.head, None)
+# list.showValues()

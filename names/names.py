@@ -19,7 +19,7 @@ for name_1 in names_1[1:]:
     bstNames1.insert(name_1)
 for name_2 in names_2:
         if bstNames1.contains(name_2):
-            duplicates.append(name_2)
+            duplicates.append(name_1)
 
 
 end_time = time.time()
